@@ -1,28 +1,34 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Steps, Button, Form, Input } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { setStep, updateFormData } from "../store/features/formSlice";
+// import Modal from "./components/Modal";
+
 const { Step } = Steps;
 
 const StepsForm = () => {
   const dispatch = useDispatch();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { step, formData } = useSelector((state: any) => state.form);
   const [form] = Form.useForm();
 
   const steps = [
     {
-      title: "Step 1",
+      title: "Select BOM",
       content: (
-        <Form form={form} layout="vertical">
-          <Form.Item
-            label="Name"
-            name="name"
-            rules={[{ required: true, message: "Please input your name!" }]}
-          >
-            <Input />
-          </Form.Item>
-        </Form>
+        <>
+          <h3 className="text-center">Select BOM</h3>
+          <Form form={form} layout="vertical">
+            <Form.Item
+              label="Name"
+              name="name"
+              rules={[{ required: true, message: "Please input your name!" }]}
+            >
+              <Input />
+            </Form.Item>
+          </Form>
+          {/* <Modal /> */}
+        </>
       ),
     },
     {
@@ -42,10 +48,10 @@ const StepsForm = () => {
     {
       title: "Summary",
       content: (
-        <div>
+        <>
           <p>Name: {formData.name}</p>
           <p>Email: {formData.email}</p>
-        </div>
+        </>
       ),
     },
   ];
@@ -64,7 +70,7 @@ const StepsForm = () => {
 
   return (
     <div>
-      <Steps current={step}>
+      <Steps current={step} labelPlacement="vertical">
         {steps.map((item, index) => (
           <Step key={index} title={item.title} />
         ))}
