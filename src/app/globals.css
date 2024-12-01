@@ -8,3 +8,8 @@
   padding-right: 1rem;
   padding-left: 1rem;
 }
+
+.err {
+  color: red;
+  margin-top: 4px;
+}

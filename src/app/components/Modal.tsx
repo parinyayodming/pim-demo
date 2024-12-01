@@ -23,7 +23,7 @@ const App: React.FC = () => {
         Open Modal
       </Button>
       <Modal
-        title="Basic Modal"
+        title="Basic"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
