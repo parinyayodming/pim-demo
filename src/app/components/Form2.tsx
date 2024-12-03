@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Form, Input, Select } from "antd";
-// import Modal from "./Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { setStep, updateFormData } from "../../store/features/formSlice";
 import * as Yup from "yup";
@@ -146,13 +144,6 @@ export default function Form2() {
           </Form>
         )}
       </Formik>
-
-      {/* <div style={{ marginTop: 20 }}>
-        {step > 0 && <Button onClick={handlePrev}>Previous</Button>}
-        <Button className="ms-2" type="primary" onClick={handleNext}>
-          Next
-        </Button>
-      </div> */}
       {/* <Modal /> */}
     </>
   );

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Form, Input } from "antd";
-// import Modal from "./Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { setStep, updateFormData } from "../../store/features/formSlice";
 
@@ -34,7 +33,6 @@ export default function Form1() {
           Next
         </Button>
       </div>
-      {/* <Modal /> */}
     </>
   );
 }
