@@ -15,12 +15,14 @@ export default function Sumary() {
   return (
     <>
       <h3 className="text-center">Sumary</h3>
-      <p>Type: {formData.type}</p>
-      <p>Name: {formData.username}</p>
-      <p>Email: {formData.email}</p>
-      <p>Password: {formData.password}</p>
-      <p>Role: {formData.role}</p>
-      <div style={{ marginTop: 20 }}>
+      <div className="card shadow border-0 rounded-3 p-4 my-4">
+        <p>Type: {formData.type}</p>
+        <p>Name: {formData.username}</p>
+        <p>Email: {formData.email}</p>
+        <p>Password: {formData.password}</p>
+        <p>Role: {formData.role}</p>
+      </div>
+      <div className="col-12 text-center">
         {step > 0 && <Button onClick={handlePrev}>Previous</Button>}
         <Button
           className="ms-2"

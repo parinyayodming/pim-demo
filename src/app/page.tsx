@@ -27,12 +27,18 @@ const StepsForm = () => {
 
   return (
     <>
-      <Steps current={step} labelPlacement="vertical">
-        {steps.map((item, index) => (
-          <Step key={index} title={item.title} />
-        ))}
-      </Steps>
-      <div className="mt-4">{steps[step].content}</div>
+      <div className="row justify-content-center">
+        <div className="col-md-8">
+          <Steps current={step} labelPlacement="vertical">
+            {steps.map((item, index) => (
+              <Step key={index} title={item.title} />
+            ))}
+          </Steps>
+        </div>
+      </div>
+      <div className="row mt-4 justify-content-center">
+        <div className="col-md-4">{steps[step].content}</div>
+      </div>
     </>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Form, Input, Select } from "antd";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,7 +34,7 @@ const validationSchema = Yup.object({
 export default function Form2() {
   const dispatch = useDispatch();
   const { step } = useSelector((state: any) => state.form);
-  const [form] = Form.useForm();
+  // const [form] = Form.useForm();
 
   // const handleNext = () => {
   //   form.validateFields().then((values) => {
@@ -91,7 +92,7 @@ export default function Form2() {
         onSubmit={handleSubmit}
       >
         {({ handleSubmit, handleChange, setFieldValue, values }) => (
-          <Form form={form} layout="vertical" onFinish={handleSubmit}>
+          <Form layout="vertical" onFinish={handleSubmit}>
             <Form.Item label="ชื่อผู้ใช้" required>
               <Field
                 name="username"
@@ -130,11 +131,10 @@ export default function Form2() {
                   { value: "User", label: "User" },
                 ]}
               />
-
               <ErrorMessage name="role" component="div" className="err" />
             </Form.Item>
             <Form.Item>
-              <div style={{ marginTop: 20 }}>
+              <div className="col-12 text-end">
                 {step > 0 && <Button onClick={handlePrev}>Previous</Button>}
                 <Button className="ms-2" type="primary" htmlType="submit">
                   Next
