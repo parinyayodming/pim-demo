@@ -1,6 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { createSlice, PayloadAction  } from "@reduxjs/toolkit";
 
-const initialState = {
+interface FormState {
+  step: number;
+  formData: Record<string, any>;
+}
+
+const initialState: FormState = {
   step: 0,
   formData: {},
 };
@@ -12,7 +18,7 @@ const formSlice = createSlice({
     setStep(state, action) {
       state.step = action.payload;
     },
-    updateFormData(state, action) {
+    updateFormData(state, action: PayloadAction<Record<string, any>>) {
       state.formData = { ...state.formData, ...action.payload };
     },
     resetForm(state) {

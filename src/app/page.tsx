@@ -8,8 +8,10 @@ import Sumary from "./components/Sumary";
 
 const { Step } = Steps;
 
+
 const StepsForm = () => {
   const { step } = useSelector((state: any) => state.form);
+
   const steps = [
     {
       title: "Select BOM",

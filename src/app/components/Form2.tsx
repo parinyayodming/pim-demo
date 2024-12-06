@@ -34,19 +34,6 @@ const validationSchema = Yup.object({
 export default function Form2() {
   const dispatch = useDispatch();
   const { step } = useSelector((state: any) => state.form);
-  // const [form] = Form.useForm();
-
-  // const handleNext = () => {
-  //   form.validateFields().then((values) => {
-  //     dispatch(updateFormData(values));
-  //     dispatch(setStep(step + 1));
-  //     form.resetFields();
-  //   });
-  // };
-
-  // const handleChange = (value: string) => {
-  //   console.log(`selected ${value}`);
-  // };
 
   const handlePrev = () => {
     dispatch(setStep(step - 1));

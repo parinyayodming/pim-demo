@@ -31,6 +31,10 @@ export default function Form1() {
   //   });
   // };
 
+  // const handleChange = (value: string) => {
+  //   console.log(`selected ${value}`);
+  // };
+
   const handleSubmit = (values: BOMFormValues) => {
     console.log("Form values:", values);
     dispatch(updateFormData(values));
@@ -45,17 +49,18 @@ export default function Form1() {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ handleSubmit, handleChange, setFieldValue, values }) => (
+        {({ handleSubmit, setFieldValue, values }) => (
           <Form layout="vertical" onFinish={handleSubmit}>
-            <Form.Item label="ชนิด" required>
+            <Form.Item label="Select BOM" required>
               <Select
                 defaultValue="กรุณาเลือก"
                 placeholder="กรุณาเลือก"
                 onChange={(value) => setFieldValue("type", value)}
                 value={values.type}
                 options={[
-                  { value: "gold", label: "gold" },
-                  { value: "diamond", label: "diamond" },
+                  { value: "Jewelry", label: "Jewelry" },
+                  { value: "Charmmy", label: "Charmmy" },
+                  { value: "Gold", label: "Gold" },
                 ]}
               />
               <ErrorMessage name="type" component="div" className="err" />
